@@ -1,0 +1,8 @@
+.outer {
+  width: 50%;
+  border: 1px solid #000;
+}
+
+.inner {
+  margin: 10px;
+}

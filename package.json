@@ -1,0 +1,27 @@
+{
+  "private": true,
+  "name": "with-flow",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build:babel": "babel src --out-dir=build --copy-files --plugins=syntax-flow,css-modules-transform",
+    "build:flow": "flow check build/",
+    "build:browserify": "browserify -t [babelify --plugins transform-flow-strip-types] -p [css-modulesify -o dist/main.css] src/index.js > dist/main.js",
+    "build": "npm run build:babel && npm run build:flow && npm run build:browserify",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "joshwnj",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-plugin-css-modules-transform": "^1.1.0",
+    "babel-plugin-transform-flow-strip-types": "^6.18.0",
+    "babel-plugin-typecheck": "^3.9.0",
+    "babelify": "^7.3.0",
+    "browserify": "^13.1.1",
+    "css-modulesify": "^0.25.1",
+    "flow-bin": "^0.34.0"
+  }
+}
